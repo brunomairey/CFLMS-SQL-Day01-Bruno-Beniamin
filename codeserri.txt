@@ -1,0 +1,7 @@
+create table users (
+	id int(11) PRIMARY KEY AUTO_INCREMENT,
+    `status` enum("true","false") DEFAULT "false",
+    fk_book int(11),
+    FOREIGN KEY (fk_book) REFERENCES book(book_id) ON DELETE CASCADE
+);
+select customer.first_name, customer.address from customer;
