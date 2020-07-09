@@ -1,3 +1,5 @@
+/*exercise 1*/
+
 SELECT table_name, table_rows
    FROM INFORMATION_SCHEMA.TABLES
    WHERE TABLE_SCHEMA = 'employees';
@@ -6,16 +8,26 @@ SELECT SUM(TABLE_ROWS)
    FROM INFORMATION_SCHEMA.TABLES
    WHERE TABLE_SCHEMA = 'employees';
 
-
+/*exercise 2*/
 SELECT * FROM `employees` where first_name = "Mark"
+
+/*exercise3*/
 SELECT * FROM `employees` where employees.first_name = "Eric" and employees.last_name LIKE "A%"
+
+/*exercise4*/
 
 SELECT count(`employees`.`emp_no`) FROM employees where employees.hire_date BETWEEN "1990-01-01" and "2020-07-09";
 
 SELECT COUNT(`employees`.`emp_no`)FROM employees where employees.hire_date BETWEEN "1990-01-01" and NOW();
 
+SELECT * FROM employees where employees.hire_date BETWEEN "1990-01-01" and NOW();
+
+/*exercise 5*/
+
 SELECT count(`employees`.`emp_no`) FROM employees where employees.hire_date BETWEEN "1990-01-01" and "1997-12-31";
 SELECT * FROM employees where employees.hire_date BETWEEN "1990-01-01" and "1997-12-31";
+
+/*exercise 6*/
 
 SELECT * FROM employees JOIN salaries ON employees.emp_no = salaries.emp_no WHERE salaries.salary > 75000
 SELECT count(employees.emp_no) from employees JOIN salaries ON employees.emp_no = salaries.emp_no WHERE salaries.salary > 70000; 
